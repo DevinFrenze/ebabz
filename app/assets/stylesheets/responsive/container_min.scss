@@ -1,0 +1,15 @@
+.container--min {
+  @include margin-auto;
+}
+
+.container--min.content--narrow,
+.container--min.content--dynamic {
+  @include constrict-width($screen-xs-min, $content-xs-gutter);
+  @include constrict-width($screen-sm-min, $content-sm-gutter);
+  @include constrict-width($screen-md-min, $content-md-gutter);
+}
+
+.container--min.content--narrow {
+  @include constrict-width($screen-lg-min, $content-lg-gutter);
+  @include constrict-width($screen-xl-min, $content-xl-gutter);
+}

@@ -1,0 +1,27 @@
+// maximum page width
+$page-max-width: 1280px;
+
+// what we consider the breakpoints for screen width
+$screen-xs-min: 0px;    // portrait phones and anything smaller
+$screen-sm-min: 576px;  // landscape phones
+$screen-md-min: 768px;  // tablets
+$screen-lg-min: 992px;  // small laptops
+$screen-xl-min: 1200px; // large laptops and desktops
+
+$screen-xs-max: $screen-sm-min - 1px;
+$screen-sm-max: $screen-md-min - 1px;
+$screen-md-max: $screen-lg-min - 1px;
+$screen-lg-max: $screen-xl-min - 1px;
+// no maximum on screen width
+
+// different gutters at different widths
+$content-xs-gutter: 16px;
+$content-sm-gutter: 24px;
+$content-md-gutter: 32px;
+$content-lg-gutter: 64px;
+$content-xl-gutter: 128px;
+
+// maximum permittable content width
+$content-wide-max-width: $page-max-width;
+$content-dynamic-max-width: $page-max-width - (2 * $content-md-gutter);
+$content-narrow-max-width: $page-max-width - (2 * $content-xl-gutter);

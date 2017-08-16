@@ -1,0 +1,19 @@
+.container--pad {
+  @include margin-auto;
+}
+
+.container--pad.content--narrow,
+.container--pad.content--dynamic {
+  @include apply-padding($screen-xs-min, $content-xs-gutter);
+  @include apply-padding($screen-sm-min, $content-sm-gutter);
+  @include apply-padding($screen-md-min, $content-md-gutter);
+}
+
+.container--pad.content--narrow {
+  @include apply-padding($screen-lg-min, $content-lg-gutter);
+  @include apply-padding($screen-xl-min, $content-xl-gutter);
+}
+
+.container--pad.content--dynamic {
+  max-width: $content-dynamic-max-width;
+}

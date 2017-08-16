@@ -1,0 +1,25 @@
+@mixin min-media-query($media-size) {
+  @media only screen and (min-width: $media-size) { @content; }
+}
+
+@mixin max-media-query($media-size) {
+  @media only screen and (max-width: $media-size) { @content; }
+}
+
+@mixin apply-padding($min-size, $padding) {
+  @include min-media-query($min-size) {
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+}
+
+@mixin constrict-width($min-size, $padding) {
+  @include min-media-query($min-size) {
+    width: calc(100% - (2 * #{$padding}));
+  }
+}
+
+@mixin margin-auto() {
+  margin-left: auto;
+  margin-right: auto;
+}

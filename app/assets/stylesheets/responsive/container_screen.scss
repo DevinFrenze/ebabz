@@ -1,0 +1,24 @@
+$flex-padding-narrow: calc((100% - #{$content-narrow-max-width}) / 2);
+$flex-padding-wide: calc((100% - #{$content-wide-max-width}) / 2);
+
+.container--screen.content--narrow,
+.container--screen.content--dynamic {
+  @include apply-padding($screen-xs-min, $content-xs-gutter);
+  @include apply-padding($screen-sm-min, $content-sm-gutter);
+  @include apply-padding($screen-md-min, $content-md-gutter);
+}
+
+.container--screen.content--narrow {
+  @include apply-padding($screen-lg-min, $content-lg-gutter);
+  @include apply-padding($content-narrow-max-width + (2 * $content-lg-gutter), $flex-padding-narrow);
+  @include apply-padding($screen-xl-min, $content-xl-gutter);
+  @include apply-padding($content-wide-max-width, $flex-padding-narrow);
+}
+
+.container--screen.content--dynamic {
+  @include apply-padding($content-dynamic-max-width, $flex-padding-wide);
+}
+
+.container--screen.content--wide {
+  @include apply-padding($content-wide-max-width, $flex-padding-wide);
+}

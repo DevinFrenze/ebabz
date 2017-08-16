@@ -1,0 +1,45 @@
+<div class="header">
+  <div class="header__picture container--min content--wide">
+  </div>
+  <div class="header__address container--pad content--dynamic">
+    Saturday, December 9th 2017
+  </div>
+  <div class="container--pad content--dynamic">
+  <%= button_tag "Menu",
+    onclick: "document.getElementById('nav').classList.toggle('m--open')",
+    type: "button",
+    class: "header__navbar__toggle"
+  %>
+  </div>
+  <nav id="nav" class="header__navbar container--pad content--dynamic">
+    <%= link_to "Home",
+      root_path,
+      class: "header__navbar__link"
+    %>
+    <%= link_to "About",
+      { controller: "about" },
+      class: "header__navbar__link"
+    %>
+    <%= link_to "Tabling",
+      { controller: "tabling" },
+      class: "header__navbar__link"
+    %>
+    <div class="header__navbar__icons">
+      <%= link_to "F",
+        "https://www.facebook.com/EBABZfest/",
+        target: "_blank",
+        class: "header__navbar__icon"
+      %>
+      <%= link_to "I",
+        "https://www.instagram.com/ebabzinefest/",
+        target: "_blank",
+        class: "header__navbar__icon"
+      %>
+      <%= mail_to "ebabzfest@gmail.com",
+        "M",
+        target: "_blank",
+        class: "header__navbar__icon"
+      %>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,8 @@
+.content--narrow {
+  max-width: $content-narrow-max-width;
+}
+
+.content--dynamic,
+.content--wide {
+  max-width: $content-wide-max-width;
+}
