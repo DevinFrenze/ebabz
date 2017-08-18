@@ -1,6 +1,4 @@
 class Article < ApplicationRecord
-  belongs_to :event_info
-
   validates :publication, presence: true
   validates :title, presence: true
   validates :url,  presence: true, uniqueness: true, url: true

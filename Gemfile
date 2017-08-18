@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'awesome_print'
 gem 'devise'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
