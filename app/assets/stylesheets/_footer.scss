@@ -1,0 +1,5 @@
+.footer {
+  @include max-media-query($screen-sm-max) {
+    display: none;
+  }
+}

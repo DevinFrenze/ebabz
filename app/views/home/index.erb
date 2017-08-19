@@ -1,4 +1,7 @@
 <div class="container--min content--dynamic">
   <h1>ebabz home</h1>
-  <%= @event.event_string %>
+  <p><%= @event.event_string %></p>
+  <% if @event.address.present? %>
+    <p><%= @event.address.address_string %></p>
+  <% end %>
 </div>

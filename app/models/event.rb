@@ -20,7 +20,9 @@ class Event < ApplicationRecord
     end
 
     if has_time?
-      defined.push("#{start_time} - #{end_time}")
+      start = start_time.strftime("%l %p").downcase
+      stop = end_time.strftime("%l %p").downcase
+      defined.push("#{start} to #{stop}")
     else
       undefined.push("Time")
     end
@@ -32,7 +34,8 @@ class Event < ApplicationRecord
     end
 
     string = ""
-    string += "#{defined.join(", ")}, " if defined.length > 0
+    string += "#{defined.join(", ")}" if defined.length > 0 && undefined.empty?
+    string += "#{defined.join(", ")}, " if defined.length > 0 && undefined.any?
     string += "#{undefined.to_sentence} TBA" if undefined.length > 0
     string
   end

@@ -1,9 +1,16 @@
 <div class="footer container--min content--dynamic">
   <div class="footer__event-info">
+    <%= @event.event_string %>
+  </div>
+  <% if @event.address.present? %>
+    <div class="footer__event-address">
+      <%= @event.address.address_string %>
+    </div>
+  <% end %>
+  <div class="footer__event-info">
+    © 2017 EBABZ. All rights reserved.
   </div>
   <div class="footer__links">
-    <a>ebabzfest@gmail.com</a>
-    <a>Facebook</a>
-    <a>Instagram</a>
+    <%= render "icon_links" %>
   </div>
 </div>

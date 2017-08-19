@@ -1,0 +1,15 @@
+<%= button_tag "Menu",
+  onclick: "document.getElementById('mobile-menu').classList.toggle('m--open')",
+  type: "button",
+  class: "mobile-menu__open-button"
+%>
+
+<div id="mobile-menu" class="mobile-menu">
+  <%= button_tag "Close",
+    onclick: "document.getElementById('mobile-menu').classList.toggle('m--open')",
+    type: "button",
+    class: "mobile-menu__close-button"
+  %>
+  <%= render "nav_links" %>
+  <%= render "icon_links" %>
+</div>
