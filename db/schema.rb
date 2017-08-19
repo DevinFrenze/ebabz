@@ -13,11 +13,10 @@
 ActiveRecord::Schema.define(version: 20170819034221) do
 
   create_table "addresses", force: :cascade do |t|
-    t.string  "street",   null: false
-    t.string  "city",     null: false
-    t.string  "state",    null: false
-    t.string  "zip",      null: false
-    t.integer "event_id", null: false
+    t.string "street", null: false
+    t.string "city",   null: false
+    t.string "state",  null: false
+    t.string "zip"
   end
 
   create_table "admins", force: :cascade do |t|
@@ -37,11 +36,11 @@ ActiveRecord::Schema.define(version: 20170819034221) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "applies", force: :cascade do |t|
-    t.date    "start_date", null: false
-    t.date    "end_date",   null: false
-    t.text    "form"
-    t.integer "event_id"
+  create_table "application_forms", force: :cascade do |t|
+    t.date "start_date", null: false
+    t.date "end_date",   null: false
+    t.text "form"
+    t.text "info"
   end
 
   create_table "articles", force: :cascade do |t|
@@ -59,17 +58,14 @@ ActiveRecord::Schema.define(version: 20170819034221) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.integer "year",                       null: false
-    t.boolean "active",     default: false, null: false
+    t.integer "year",                null: false
     t.time    "start_time"
     t.time    "end_time"
     t.date    "date"
     t.string  "venue"
-  end
-
-  create_table "events_vendors", id: false, force: :cascade do |t|
-    t.integer "event_id",  null: false
-    t.integer "vendor_id", null: false
+    t.integer "address_id"
+    t.integer "application_form_id"
+    t.integer "volunteer_form_id"
   end
 
   create_table "faqs", force: :cascade do |t|
@@ -92,11 +88,11 @@ ActiveRecord::Schema.define(version: 20170819034221) do
     t.string "url",  null: false
   end
 
-  create_table "volunteers", force: :cascade do |t|
-    t.date    "start_date", null: false
-    t.date    "end_date",   null: false
-    t.text    "form"
-    t.integer "event_id"
+  create_table "volunteer_forms", force: :cascade do |t|
+    t.date "start_date", null: false
+    t.date "end_date",   null: false
+    t.text "form"
+    t.text "info"
   end
 
 end

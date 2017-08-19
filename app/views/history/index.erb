@@ -1,6 +1,36 @@
 <div class="container--min content--dynamic">
   <h1>ebabz history</h1>
-  <% #TODO origin paragraph %>
-  <% #TODO press %>
-  <% #TODO past events w/ vendors %>
+  <% if @history.present? %>
+    <h2>History</h2>
+    <div>
+      <%= @history.body %>
+    </div>
+  <% end %>
+
+  <% if @articles.any? %>
+    <h2>Press</h2>
+  <% end %>
+  <% @articles.each_with_index do |article, index| %>
+    <div>
+      <% if index == 0 || article.year != articles[index - 1].year %>
+        <p><%= article.year %></p>
+      <% end %>
+      <a href="<%= article.url %>">
+        <%= article.publication %> - <%= article.title %>
+      </a>
+    </div>
+  <% end %>
+
+  <% if @past_events.any? %>
+    <h2>Past Fests</h2>
+  <% end %>
+  <% @past_events.each do |event| %>
+    <%= render "event_info", event: event %>
+
+    <h2>Vendors</h2>
+
+    <% event.vendors.each do |vendor| %>
+      <%= render "vendor", vendor: vendor %>
+    <% end %>
+  <% end %>
 </div>

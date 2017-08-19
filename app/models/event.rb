@@ -1,28 +1,25 @@
 class Event < ApplicationRecord
   validates :year, presence: true, uniqueness: true
-  validates :active, presence: true
 
   has_many :event_vendors
   has_many :vendors, through: :event_vendors
 
-  has_one :address, dependent: :destroy
-  has_one :apply, dependent: :destroy
-  has_one :volunteer, dependent: :destroy
+  belongs_to :address, dependent: :destroy, optional: true
+  belongs_to :application_form, dependent: :destroy, optional: true
+  belongs_to :volunteer_form, dependent: :destroy, optional: true
 
   def event_string
     undefined = []
     defined = []
 
     if has_date?
-      defined.push(date.strftime("%A, %B %e"))
+      defined.push(date_string)
     else
       undefined.push("Date")
     end
 
     if has_time?
-      start = start_time.strftime("%l %p").downcase
-      stop = end_time.strftime("%l %p").downcase
-      defined.push("#{start} to #{stop}")
+      defined.push(time_string)
     else
       undefined.push("Time")
     end
@@ -44,11 +41,28 @@ class Event < ApplicationRecord
     start_time.present? || end_time.present?
   end
 
+  def time_string
+    return "Time TBA" unless has_time?
+    start = start_time.strftime("%l %p").downcase
+    stop = end_time.strftime("%l %p").downcase
+    "#{start} to #{stop}"
+  end
+
   def has_date?
     date.present?
   end
 
+  def date_string
+    return "Date TBA" unless has_date?
+    date.strftime("%A, %B %e")
+  end
+
   def has_venue?
     !venue.blank?
+  end
+
+  def venue_string
+    return "Location TBA" unless has_venue?
+    venue
   end
 end

@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
   before_filter :set_event
 
   def set_event
-    @event = Event.first
+    @event = Event.first || Event.new
   end
 end

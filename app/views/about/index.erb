@@ -1,6 +1,21 @@
 <div class="container--min content--dynamic">
-  <h1>ebabz about</h1>
-  <% #TODO event info and address %>
-  <% #TODO faq info and address %>
-  <% #TODO safespace %>
+  <h2>About</h2>
+  <%= render "event_info", event: @event %>
+
+  <% if @faqs.any? %>
+    <h2>Frequenty Asked Questions</h2>
+  <% end %>
+  <% @faqs.each do |faq| %>
+    <div>
+      <p><%= faq.question %></p>
+      <p><%= faq.answer %></p>
+    </div>
+  <% end %>
+
+  <% if @safe_space.present? %>
+    <h2>Safe Space Policy</h2>
+    <div>
+      <%= @safe_space.body %>
+    </div>
+  <% end %>
 </div>

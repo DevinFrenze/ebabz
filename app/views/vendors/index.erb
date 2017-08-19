@@ -1,4 +1,7 @@
 <div class="container--min content--dynamic">
   <h1>ebabz vendors</h1>
-  <% #TODO this year's vendors %>
+
+  <% @event.vendors.each do |vendor| %>
+    <%= render "vendor", vendor: vendor %>
+  <% end %>
 </div>
