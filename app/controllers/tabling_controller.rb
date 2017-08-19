@@ -1,2 +1,0 @@
-class TablingController < ApplicationController
-end
