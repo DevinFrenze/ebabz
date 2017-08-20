@@ -22,5 +22,17 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.excluded_models << "EventVendor" << "Admin"
+  config.excluded_models << "Admin" << "FestVendor"
+
+  config.model 'Address' do
+    visible false
+  end
+
+  config.model 'ApplicationForm' do
+    visible false
+  end
+
+  config.model 'VolunteerForm' do
+    visible false
+  end
 end

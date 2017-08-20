@@ -1,13 +1,13 @@
 <div class="footer container--min content--dynamic">
-  <div class="footer__event-info">
-    <%= @event.event_string %>
+  <div class="footer__fest-info">
+    <%= @fest.fest_string %>
   </div>
-  <% if @event.address.present? %>
-    <div class="footer__event-address">
-      <%= @event.address.address_string %>
+  <% if @fest.address.present? %>
+    <div class="footer__fest-address">
+      <%= @fest.address.address_string %>
     </div>
   <% end %>
-  <div class="footer__event-info">
+  <div class="footer__fest-info">
     © 2017 EBABZ. All rights reserved.
   </div>
   <div class="footer__links">

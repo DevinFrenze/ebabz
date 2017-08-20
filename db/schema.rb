@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819034221) do
+ActiveRecord::Schema.define(version: 20170820045119) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street", null: false
@@ -52,12 +52,19 @@ ActiveRecord::Schema.define(version: 20170819034221) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "event_vendors", force: :cascade do |t|
-    t.integer "event_id",  null: false
+  create_table "faqs", force: :cascade do |t|
+    t.string   "question"
+    t.string   "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fest_vendors", force: :cascade do |t|
+    t.integer "fest_id",   null: false
     t.integer "vendor_id", null: false
   end
 
-  create_table "events", force: :cascade do |t|
+  create_table "fests", force: :cascade do |t|
     t.integer "year",                null: false
     t.time    "start_time"
     t.time    "end_time"
@@ -68,19 +75,9 @@ ActiveRecord::Schema.define(version: 20170819034221) do
     t.integer "volunteer_form_id"
   end
 
-  create_table "faqs", force: :cascade do |t|
-    t.string   "question"
-    t.string   "answer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "histories", force: :cascade do |t|
-    t.text "body"
-  end
-
-  create_table "safe_spaces", force: :cascade do |t|
-    t.text "body"
+  create_table "general_infos", force: :cascade do |t|
+    t.text "history",           null: false
+    t.text "safe_space_policy", null: false
   end
 
   create_table "vendors", force: :cascade do |t|

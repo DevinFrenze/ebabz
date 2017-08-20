@@ -1,9 +1,9 @@
 <div class="container--min content--dynamic">
   <h1>ebabz history</h1>
-  <% if @history.present? %>
+  <% if @general_info.history.present? %>
     <h2>History</h2>
     <div>
-      <%= @history.body %>
+      <%= @general_info.history %>
     </div>
   <% end %>
 
@@ -21,15 +21,15 @@
     </div>
   <% end %>
 
-  <% if @past_events.any? %>
+  <% if @past_fests.any? %>
     <h2>Past Fests</h2>
   <% end %>
-  <% @past_events.each do |event| %>
-    <%= render "event_info", event: event %>
+  <% @past_fests.each do |fest| %>
+    <%= render "fest_info", fest: fest %>
 
     <h2>Vendors</h2>
 
-    <% event.vendors.each do |vendor| %>
+    <% fest.vendors.each do |vendor| %>
       <%= render "vendor", vendor: vendor %>
     <% end %>
   <% end %>

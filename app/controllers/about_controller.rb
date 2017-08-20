@@ -1,6 +1,6 @@
 class AboutController < ApplicationController
   def index
-    @safe_space = SafeSpace.last
+    @general_info = GeneralInfo.last || GeneralInfo.new
     @faqs = FAQ.all
   end
 end

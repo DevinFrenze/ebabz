@@ -1,14 +1,14 @@
-class Event < ApplicationRecord
+class Fest < ApplicationRecord
   validates :year, presence: true, uniqueness: true
 
-  has_many :event_vendors
-  has_many :vendors, through: :event_vendors
+  has_many :fest_vendors
+  has_many :vendors, through: :fest_vendors
 
   belongs_to :address, dependent: :destroy, optional: true
   belongs_to :application_form, dependent: :destroy, optional: true
   belongs_to :volunteer_form, dependent: :destroy, optional: true
 
-  def event_string
+  def fest_string
     undefined = []
     defined = []
 
@@ -64,5 +64,13 @@ class Event < ApplicationRecord
   def venue_string
     return "Location TBA" unless has_venue?
     venue
+  end
+
+  def has_application_form?
+    application_form.present?
+  end
+
+  def has_volunteer_form?
+    application_form.present?
   end
 end

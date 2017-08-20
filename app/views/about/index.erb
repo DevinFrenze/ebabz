@@ -1,6 +1,6 @@
 <div class="container--min content--dynamic">
   <h2>About</h2>
-  <%= render "event_info", event: @event %>
+  <%= render "fest_info", fest: @fest %>
 
   <% if @faqs.any? %>
     <h2>Frequenty Asked Questions</h2>
@@ -12,10 +12,10 @@
     </div>
   <% end %>
 
-  <% if @safe_space.present? %>
+  <% if @general_info.safe_space_policy.present? %>
     <h2>Safe Space Policy</h2>
     <div>
-      <%= @safe_space.body %>
+      <%= @general_info.safe_space_policy %>
     </div>
   <% end %>
 </div>

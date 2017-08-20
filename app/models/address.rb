@@ -1,5 +1,5 @@
 class Address < ApplicationRecord
-  belongs_to :event
+  belongs_to :fest
 
   validates :street, presence: true
   validates :city, presence: true

@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_filter :set_event
+  before_filter :set_fest
 
-  def set_event
-    @event = Event.first || Event.new
+  def set_fest
+    @fest = Fest.last || Fest.new
   end
 end

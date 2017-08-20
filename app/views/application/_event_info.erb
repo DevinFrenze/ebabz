@@ -1,9 +1,0 @@
-<div>
-  <p><%= event.date_string %></p>
-  <p><%= event.time_string %></p>
-  <p><%= event.venue_string %></p>
-  <% if event.has_venue? && event.address.present? %>
-    <p><%= event.address.street %></p>
-    <p><%= event.address.city_string %></p>
-  <% end %>
-</div>
