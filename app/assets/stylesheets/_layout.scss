@@ -6,8 +6,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  font-family: $roboto;
 }
 
 .main {
+  position: relative;
   flex-grow: 1;
 }
