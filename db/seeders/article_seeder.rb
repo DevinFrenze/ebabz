@@ -5,6 +5,7 @@ module Seeders
         article_attributes.each do |attributes|
           Article.create!(attributes)
         end
+        puts "Seeded Articles"
       end
     end
 
