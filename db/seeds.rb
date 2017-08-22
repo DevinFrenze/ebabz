@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Dir[Rails.root.join("db/seeders/**/*.rb")].each { |f| require f }
-# Seeders::ArticleSeeder.new.seed!
-# Seeders::FestSeeder.new.seed!
-# Seeders::VendorSeeder.new.seed!
+Seeders::ArticleSeeder.new.seed!
+Seeders::FestSeeder.new.seed!
+Seeders::VendorSeeder.new.seed!
 Seeders::GeneralInfoSeeder.new.seed!
