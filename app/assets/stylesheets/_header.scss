@@ -9,12 +9,14 @@
   align-items: baseline;
   justify-content: space-between;
 
-  border-top: 1px solid black;
   border-bottom: 1px solid black;
+  background: white;
 
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 20px;
+
+  transition: all 0.5s;
 
   @include max-media-query($screen-sm-max) {
       display: none;
@@ -23,4 +25,15 @@
 
 .header__navbar__nav-links .nav-link {
   margin-left: 32px;
+}
+
+.header__navbar.m--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
