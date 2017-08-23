@@ -2,8 +2,8 @@
   <p><%= fest.date_string %></p>
   <p><%= fest.time_string %></p>
   <p><%= fest.venue_string %></p>
-  <% if fest.has_venue? && fest.address.present? %>
-    <p><%= fest.address.street %></p>
-    <p><%= fest.address.city_string %></p>
+  <% if fest.location.present? %>
+    <p><%= fest.location.street %></p>
+    <p><%= fest.location.city_string %></p>
   <% end %>
 </div>

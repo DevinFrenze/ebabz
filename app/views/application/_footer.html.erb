@@ -1,16 +1,24 @@
-<div class="footer container--min content--dynamic">
-  <div class="footer__fest-info">
-    <%= @fest.fest_string %>
+<div class="footer container--screen content--dynamic">
+  <div class="footer__date">
+    <div>EBABZ Fest <%= @fest.year %></div>
+    <div><%= @fest.date_string %></div>
+    <div><%= @fest.time_string %></div>
   </div>
-  <% if @fest.address.present? %>
-    <div class="footer__fest-address">
-      <%= @fest.address.address_string %>
+
+  <% if @fest.location.present? %>
+    <div class="footer__location">
+      <div><%= @fest.location.name %></div>
+      <div><%= @fest.location.street %></div>
+      <div><%= @fest.location.city_string %></div>
     </div>
   <% end %>
-  <div class="footer__fest-info">
-    © 2017 EBABZ. All rights reserved.
-  </div>
-  <div class="footer__links">
-    <%= render "icon_links" %>
+
+  <div class="footer__right">
+    <div class="footer__links">
+      <%= render "icon_links" %>
+    </div>
+    <div>
+      © 2017 EBABZ.  All rights reserved.
+    </div>
   </div>
 </div>

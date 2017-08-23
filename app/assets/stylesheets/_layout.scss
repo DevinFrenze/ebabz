@@ -12,4 +12,7 @@ body {
 .main {
   position: relative;
   flex-grow: 1;
+  & > *:last-child {
+    padding-bottom: 22px;
+  }
 }

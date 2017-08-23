@@ -1,4 +1,4 @@
-<div class="container--min content--dynamic">
+<div class="container--min content--narrow">
   <h1>ebabz history</h1>
   <% if @general_info.history.present? %>
     <h2>History</h2>
@@ -12,7 +12,7 @@
   <% end %>
   <% @articles.each_with_index do |article, index| %>
     <div>
-      <% if index == 0 || article.year != articles[index - 1].year %>
+      <% if index == 0 || article.year != @articles[index - 1].year %>
         <p><%= article.year %></p>
       <% end %>
       <a href="<%= article.url %>">

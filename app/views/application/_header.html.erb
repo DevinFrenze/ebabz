@@ -5,6 +5,12 @@
     <%= render "mobile_menu" %>
   </div>
   <nav id="nav" class="header__navbar container--pad content--dynamic">
-    <%= render "nav_links" %>
+    <%= link_to "Home",
+      root_path,
+      class: "header__home-link"
+    %>
+    <div class="header__navbar__nav-links">
+      <%= render "nav_links" %>
+    </div>
   </nav>
 </div>

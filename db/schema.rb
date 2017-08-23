@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170820045119) do
 
-  create_table "addresses", force: :cascade do |t|
-    t.string "street", null: false
-    t.string "city",   null: false
-    t.string "state",  null: false
-    t.string "zip"
-  end
-
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -69,8 +62,7 @@ ActiveRecord::Schema.define(version: 20170820045119) do
     t.time    "start_time"
     t.time    "end_time"
     t.date    "date"
-    t.string  "venue"
-    t.integer "address_id"
+    t.integer "location_id"
     t.integer "application_form_id"
     t.integer "volunteer_form_id"
   end
@@ -78,6 +70,14 @@ ActiveRecord::Schema.define(version: 20170820045119) do
   create_table "general_infos", force: :cascade do |t|
     t.text "history",           null: false
     t.text "safe_space_policy", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name",   null: false
+    t.string "street", null: false
+    t.string "city",   null: false
+    t.string "state",  null: false
+    t.string "zip"
   end
 
   create_table "vendors", force: :cascade do |t|

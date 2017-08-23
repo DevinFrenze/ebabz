@@ -4,7 +4,7 @@ class Fest < ApplicationRecord
   has_many :fest_vendors
   has_many :vendors, through: :fest_vendors
 
-  belongs_to :address, dependent: :destroy, optional: true
+  belongs_to :location, dependent: :destroy, optional: true
   belongs_to :application_form, dependent: :destroy, optional: true
   belongs_to :volunteer_form, dependent: :destroy, optional: true
 
@@ -25,7 +25,7 @@ class Fest < ApplicationRecord
     end
 
     if has_venue?
-      defined.push(venue)
+      defined.push(location.name)
     else
       undefined.push("Location")
     end
@@ -54,16 +54,16 @@ class Fest < ApplicationRecord
 
   def date_string
     return "Date TBA" unless has_date?
-    date.strftime("%A, %B %e")
+    date.strftime("%a, %B %e")
   end
 
   def has_venue?
-    !venue.blank?
+    location.present? && !location.name.blank?
   end
 
   def venue_string
     return "Location TBA" unless has_venue?
-    venue
+    location.name
   end
 
   def has_application_form?

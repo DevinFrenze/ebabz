@@ -6,9 +6,8 @@ class CreateFest < ActiveRecord::Migration[5.0]
       t.time    :start_time
       t.time    :end_time
       t.date    :date
-      t.string  :venue
 
-      t.integer :address_id
+      t.integer :location_id
       t.integer :application_form_id
       t.integer :volunteer_form_id
     end
