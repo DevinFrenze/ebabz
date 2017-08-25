@@ -8,9 +8,9 @@ class Fest < ApplicationRecord
   belongs_to :application_form, dependent: :destroy, optional: true
   belongs_to :volunteer_form, dependent: :destroy, optional: true
 
-  def fest_string
+  def to_s
     undefined = []
-    defined = []
+    defined = [ name_string ]
 
     if has_date?
       defined.push(date_string)
@@ -24,17 +24,15 @@ class Fest < ApplicationRecord
       undefined.push("Time")
     end
 
-    if has_venue?
-      defined.push(location.name)
-    else
-      undefined.push("Location")
-    end
-
     string = ""
     string += "#{defined.join(", ")}" if defined.length > 0 && undefined.empty?
     string += "#{defined.join(", ")}, " if defined.length > 0 && undefined.any?
     string += "#{undefined.to_sentence} TBA" if undefined.length > 0
     string
+  end
+
+  def name_string
+    "EBABZ Fest #{year}"
   end
 
   def has_time?
@@ -57,13 +55,9 @@ class Fest < ApplicationRecord
     date.strftime("%a, %B %e")
   end
 
-  def has_venue?
-    location.present? && !location.name.blank?
-  end
-
-  def venue_string
-    return "Location TBA" unless has_venue?
-    location.name
+  def location_string
+    return "Location TBA" unless location.present?
+    location.to_s
   end
 
   def has_application_form?

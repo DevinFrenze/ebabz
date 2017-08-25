@@ -4,8 +4,8 @@ class Location < ApplicationRecord
   validates :city, presence: true
   validates :state, presence: true
 
-  def address_string
-    "#{street}, #{city}, #{state}"
+  def to_s
+    "#{name}, #{street}, #{city_string}"
   end
 
   def city_string
