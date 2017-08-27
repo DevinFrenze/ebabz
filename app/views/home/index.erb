@@ -1,5 +1,4 @@
-<div class="container--min content--dynamic">
-  <h1>ebabz home</h1>
-  <p><%= @fest.to_s %></p>
-  <p><%= @fest.location_string %></p>
+<div class="home container--min content--narrow">
+  <h1 class="home__event-title">East Bay Alternative Book and Zine Fest</h1>
+  <%= render "fest_info", fest: @fest %>
 </div>

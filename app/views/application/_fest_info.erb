@@ -1,10 +1,15 @@
-<div>
-  <p><%= fest.name_string %></p>
-  <p><%= fest.date_string %></p>
-  <p><%= fest.time_string %></p>
+<div class="fest-info">
+  <div class="fest-info__date">
+    <p><%= fest.name_string %></p>
+    <p><%= fest.date_string %></p>
+    <p><%= fest.time_string %></p>
+  </div>
   <% if fest.location.present? %>
-    <p><%= fest.location.name %></p>
-    <p><%= fest.location.street %></p>
-    <p><%= fest.location.city_string %></p>
+    <div class="fest-info__divider"></div>
+    <div class="fest-info__location">
+      <p><%= fest.location.name %></p>
+      <p><%= fest.location.street %></p>
+      <p><%= fest.location.city_string %></p>
+    </div>
   <% end %>
 </div>

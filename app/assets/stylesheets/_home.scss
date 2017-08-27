@@ -1,0 +1,19 @@
+.home {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home__event-title {
+  text-align: center;
+}
+
+.home .fest-info {
+  margin-top: 24px;
+}

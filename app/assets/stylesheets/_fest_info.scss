@@ -1,0 +1,42 @@
+.fest-info {
+  display: flex;
+  flex-direction: column;
+  font-size: $font-size-md;
+  align-items: center;
+  justify-content: center;
+  @include min-media-query($screen-md-min) {
+    flex-direction: row;
+  }
+}
+
+.fest-info__divider {
+  width: 128px;
+  height: 1px;
+  background: $black;
+  margin: 48px 0px;
+  transform: rotate(-15deg);
+  @include min-media-query($screen-md-min) {
+    width: 1px;
+    height: 64px;
+    margin: 0 48px;
+    transform: rotate(15deg);
+  }
+}
+
+.fest-info__date p,
+.fest-info__location p {
+  letter-spacing: 0.1em;
+  margin: 0;
+  margin-top: 12px;
+  &:first-child {
+    margin-top: 0px;
+  }
+}
+
+.fest-info__date,
+.fest-info__location {
+  text-align: center;
+  @include min-media-query($screen-md-min) {
+    text-align: left;
+  }
+}
