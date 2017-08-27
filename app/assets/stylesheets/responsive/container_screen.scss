@@ -16,7 +16,8 @@ $flex-padding-wide: calc((100% - #{$content-wide-max-width}) / 2);
 }
 
 .container--screen.content--dynamic {
-  @include apply-padding($content-dynamic-max-width, $flex-padding-wide);
+  $content-dynamic-break-point: $page-max-width + (2 * $content-md-gutter);
+  @include apply-padding($content-dynamic-break-point, $flex-padding-wide);
 }
 
 .container--screen.content--wide {

@@ -1,5 +1,5 @@
 // maximum page width
-$page-max-width: 1280px;
+$page-max-width: 1080px;
 
 // what we consider the breakpoints for screen width
 $screen-xs-min: 0px;    // portrait phones and anything smaller
@@ -15,9 +15,9 @@ $screen-lg-max: $screen-xl-min - 1px;
 // no maximum on screen width
 
 // different gutters at different widths
-$content-xs-gutter: 16px;
-$content-sm-gutter: 24px;
-$content-md-gutter: 32px;
+$content-xs-gutter: 32px;
+$content-sm-gutter: 32px;
+$content-md-gutter: 64px;
 $content-lg-gutter: 64px;
 $content-xl-gutter: 128px;
 

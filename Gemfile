@@ -9,6 +9,7 @@ end
 gem 'awesome_print'
 gem 'devise'
 gem 'coffee-rails', '~> 4.2'
+gem 'inline_svg'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'puma', '~> 3.0'
