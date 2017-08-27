@@ -1,0 +1,36 @@
+$mobile-header-spacing: $content-sm-gutter;
+
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 28px;
+
+  padding-top: $mobile-header-spacing;
+  padding-bottom: $mobile-header-spacing;
+
+  @include min-media-query($screen-md-min) {
+    display: none;
+  }
+}
+
+.mobile-header__home-link {
+  margin-top: 4px;
+}
+
+.mobile-header__home-link {
+  @extend .unstyled-link;
+}
+
+button.mobile-menu__open-button {
+  height: $mobile-header-spacing * 1.5;
+}
+
+.mobile-header .icon--display {
+  height: $mobile-header-spacing * 1.5;
+  width: $mobile-header-spacing * 1.5;
+  * {
+    fill: $black;
+  }
+}

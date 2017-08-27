@@ -10,16 +10,19 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require normalize-rails
  *= require_self
  *= require toastr
  */
 
 @import 'responsive/main';
 @import 'variables';
+@import 'utility_classes';
 
 @import '_footer';
 @import '_header';
 @import '_icon_link';
 @import '_layout';
 @import '_log_in';
+@import '_mobile_header';
 @import '_mobile_menu';

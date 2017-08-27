@@ -1,19 +1,28 @@
-<%= button_tag "Menu",
-  onclick: "document.getElementById('mobile-menu').classList.toggle('m--open')",
-  type: "button",
-  class: "mobile-menu__open-button"
-%>
-
-<div id="mobile-menu" class="mobile-menu">
-  <%= button_tag "Close",
+<div id="mobile-header" class="mobile-header container--screen content--dynamic">
+  <%= link_to "EBABZ",
+    root_path,
+    class: "mobile-header__home-link"
+  %>
+  <%= button_tag inline_svg("display.svg", class: 'icon--display'),
     onclick: "document.getElementById('mobile-menu').classList.toggle('m--open')",
     type: "button",
-    class: "mobile-menu__close-button"
+    class: "mobile-menu__open-button"
   %>
+</div>
+
+<div id="mobile-menu" class="mobile-menu container--screen content--dynamic">
+  <div class="mobile-menu__icons">
+    <%= button_tag inline_svg("plus.svg", class: 'icon--close'),
+      onclick: "document.getElementById('mobile-menu').classList.toggle('m--open')",
+      type: "button",
+      class: "mobile-menu__close-button"
+    %>
+    <div class="mobile-menu__spacer"></div>
+    <%= render "icon_links" %>
+  </div>
   <%= link_to "Home",
     root_path,
     class: "mobile-menu__home-link"
   %>
   <%= render "nav_links" %>
-  <%= render "icon_links" %>
 </div>

@@ -5,13 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem "autoprefixer-rails"
 gem 'awesome_print'
 gem 'devise'
 gem 'coffee-rails', '~> 4.2'
 gem 'inline_svg'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'normalize-rails'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.2'
 gem 'rails_admin', '~> 1.2'

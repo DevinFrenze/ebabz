@@ -1,22 +1,88 @@
+$mobile-menu-spacing: $content-sm-gutter;
+$mobile-menu-color: $white;
+
 .mobile-menu {
   display: none;
+
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  height: calc(100% - (2 * #{$mobile-menu-spacing}));
   z-index: 1;
-  background: white;
+
+  font-size: 28px;
+  padding-top: $mobile-menu-spacing;
+  padding-bottom: $mobile-menu-spacing;
+
+  color: $mobile-menu-color;
+  background: $gray;
 
   @include max-media-query($screen-sm-max) {
     &.m--open {
-      display: block;
+      display: flex;
+      flex-direction: column;
     }
   }
 }
 
-.mobile-menu__open-button {
-  @include min-media-query($screen-md-min) {
-    display: none;
+.mobile-menu .nav-link {
+  margin-top: 24px;
+}
+
+.mobile-menu__home-link {
+  margin-top: 4px;
+}
+
+.mobile-menu__home-link,
+.mobile-menu .nav-link {
+  @extend .unstyled-link;
+}
+
+.mobile-menu__icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  top: $mobile-menu-spacing;
+  right: $mobile-menu-spacing;
+  height: calc(100% - (2 * #{$mobile-menu-spacing}));
+}
+
+.mobile-menu__spacer {
+  flex-grow: 1;
+}
+
+button.mobile-menu__open-button,
+button.mobile-menu__close-button {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+button.mobile-menu__close-button {
+  height: $mobile-menu-spacing * 1.5;
+  margin-bottom: 24px;
+}
+
+.mobile-menu .icon--close {
+  transform: rotate(45deg);
+  height: $mobile-menu-spacing * 1.5;
+  width: $mobile-menu-spacing * 1.5;
+}
+
+.mobile-menu .icon-link {
+  margin-top: $mobile-menu-spacing / 2;
+  height: 32px;
+}
+
+.mobile-menu {
+  .icon-link__icon,
+  .icon--close {
+    * {
+      fill: $mobile-menu-color;
+    }
   }
 }
