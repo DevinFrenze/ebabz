@@ -1,2 +1,9 @@
-<h2 class="section__heading"></h2>
-<h2 class="section__text"></h2>
+<div class="section <% if local_assigns.has_key?(:reverse) && reverse %>m--reverse<% end %>">
+  <div class="section__heading-container">
+    <h2 class="section__heading"><%= heading %></h2>
+  </div>
+  <div class="section__spacer"></div>
+  <div class="section__content">
+    <%= yield %>
+  </div>
+</div>

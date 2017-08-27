@@ -2,19 +2,19 @@
   <%= render "fest_info", fest: @fest %>
 
   <% if @faqs.any? %>
-    <h2>Frequenty Asked Questions</h2>
-  <% end %>
-  <% @faqs.each do |faq| %>
-    <div>
-      <p><%= faq.question %></p>
-      <p><%= faq.answer %></p>
-    </div>
+    <%= render "section", heading: "Frequenty Asked Questions" do %>
+      <% @faqs.each do |faq| %>
+        <div>
+          <p><%= faq.question %></p>
+          <p><%= faq.answer %></p>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
 
   <% if @general_info.safe_space_policy.present? %>
-    <h2>Safe Space Policy</h2>
-    <div>
+    <%= render "section", heading: "Safe Space Policy" do %>
       <%= @general_info.safe_space_policy %>
-    </div>
+    <% end %>
   <% end %>
 </div>

@@ -1,0 +1,39 @@
+.section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 96px;
+
+  &.m--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.section__heading-container {
+  flex-grow: 1;
+}
+
+.section__heading {
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  margin: 0;
+  text-align: center;
+  background: $gray;
+  padding: 12px;
+}
+
+.section__spacer {
+  width: 48px;
+  flex-shrink: 0;
+}
+
+.section__content {
+  flex-grow: 1;
+  letter-spacing: 0.05em;
+  line-height: 1.667;
+  font-size: $font-size-md;
+  @include min-media-query($screen-md-min) {
+    align-self: flex-end;
+    max-width: 60%;
+  }
+}

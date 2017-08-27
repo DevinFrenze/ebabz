@@ -1,7 +1,7 @@
 <div class="vendors container--min content--narrow">
-  <h1>ebabz vendors</h1>
-
-  <% @fest.vendors.each do |vendor| %>
-    <%= render "vendor", vendor: vendor %>
+  <%= render "section", heading: "Vendors" do %>
+    <% @fest.vendors.each do |vendor| %>
+      <%= render "vendor", vendor: vendor %>
+    <% end %>
   <% end %>
 </div>

@@ -1,36 +1,32 @@
 <div class="container--min content--narrow">
-  <h1>ebabz history</h1>
   <% if @general_info.history.present? %>
-    <h2>History</h2>
-    <div>
+    <%= render "section", heading: "Background" do %>
       <%= @general_info.history %>
-    </div>
+    <% end %>
   <% end %>
 
   <% if @articles.any? %>
-    <h2>Press</h2>
-  <% end %>
-  <% @articles.each_with_index do |article, index| %>
-    <div>
-      <% if index == 0 || article.year != @articles[index - 1].year %>
-        <p><%= article.year %></p>
+    <%= render "section", heading: "Press", reverse: true do %>
+      <% @articles.each_with_index do |article, index| %>
+        <% if index == 0 || article.year != @articles[index - 1].year %>
+          <p><%= article.year %></p>
+        <% end %>
+        <%= render "article", article: article %>
       <% end %>
-      <a href="<%= article.url %>">
-        <%= article.publication %> - <%= article.title %>
-      </a>
-    </div>
+    <% end %>
   <% end %>
 
   <% if @past_fests.any? %>
     <h2>Past Fests</h2>
   <% end %>
+
   <% @past_fests.each do |fest| %>
     <%= render "fest_info", fest: fest %>
 
-    <h2>Vendors</h2>
-
-    <% fest.vendors.each do |vendor| %>
-      <%= render "vendor", vendor: vendor %>
+    <%= render "section", heading: "#{fest.year} Vendors" do %>
+      <% fest.vendors.each do |vendor| %>
+        <%= render "vendor", vendor: vendor %>
+      <% end %>
     <% end %>
   <% end %>
 </div>
