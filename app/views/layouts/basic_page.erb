@@ -1,0 +1,9 @@
+<% content_for :content do %>
+  <%= render "header" %>
+  <div class="main">
+    <%= content_for?(:basic_page) ? yield(:basic_page) : yield %>
+  </div>
+  <%= render "footer" %>
+<% end %>
+
+<%= render template: "layouts/application" %>

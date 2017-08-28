@@ -7,6 +7,9 @@ body {
   flex-direction: column;
   min-height: 100%;
   font-family: $roboto;
+  @include max-media-query($screen-sm-max) {
+    padding-top: 85px;
+  }
 }
 
 .main {

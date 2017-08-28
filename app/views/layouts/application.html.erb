@@ -19,10 +19,6 @@
         <% end %>
       </script>
     <% end %>
-    <%= render "header" %>
-    <div class="main">
-      <%= yield %>
-    </div>
-    <%= render "footer" %>
+    <%= content_for?(:content) ? yield(:content) : yield %>
   </body>
 </html>

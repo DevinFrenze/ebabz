@@ -1,5 +1,10 @@
+<%= render "mobile_menu" %>
+
 <div class="home container--min content--narrow">
   <h1 class="home__event-title">East Bay Alternative Book and Zine Fest</h1>
+  <div class="home__nav-links">
+    <%= render "nav_links" %>
+  </div>
   <%= render "fest_info", fest: @fest %>
   <% if @fest.is_application_period? %>
     <%= link_to "Apply",
@@ -16,4 +21,7 @@
   <% elsif @fest.is_after_application_period? %>
     <div class="home__application-info"><%= @fest.application_past_string %></div>
   <% end %>
+  <div class="home__icon-links">
+    <%= render "icon_links" %>
+  </div>
 </div>
