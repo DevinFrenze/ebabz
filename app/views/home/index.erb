@@ -1,4 +1,19 @@
 <div class="home container--min content--narrow">
   <h1 class="home__event-title">East Bay Alternative Book and Zine Fest</h1>
   <%= render "fest_info", fest: @fest %>
+  <% if @fest.is_application_period? %>
+    <%= link_to "Apply",
+      { controller: "/application_form" },
+      class: "home__cta-link"
+    %>
+  <% elsif @fest.is_before_application_period? %>
+    <div class="home__application-info"><%= @fest.application_future_string %></div>
+  <% elsif @fest.is_volunteer_period? %>
+    <%= link_to "Volunteer",
+      { controller: "/volunteer_form" },
+      class: "home__cta-link"
+    %>
+  <% elsif @fest.is_after_application_period? %>
+    <div class="home__application-info"><%= @fest.application_past_string %></div>
+  <% end %>
 </div>

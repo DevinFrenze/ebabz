@@ -29,13 +29,6 @@ ActiveRecord::Schema.define(version: 20170820045119) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "application_forms", force: :cascade do |t|
-    t.date "start_date", null: false
-    t.date "end_date",   null: false
-    t.text "form"
-    t.text "info"
-  end
-
   create_table "articles", force: :cascade do |t|
     t.string   "publication"
     t.string   "title"
@@ -67,6 +60,13 @@ ActiveRecord::Schema.define(version: 20170820045119) do
     t.integer "volunteer_form_id"
   end
 
+  create_table "forms", force: :cascade do |t|
+    t.date "start_date", null: false
+    t.date "end_date",   null: false
+    t.text "form",       null: false
+    t.text "info"
+  end
+
   create_table "general_infos", force: :cascade do |t|
     t.text "history",           null: false
     t.text "safe_space_policy", null: false
@@ -83,13 +83,6 @@ ActiveRecord::Schema.define(version: 20170820045119) do
   create_table "vendors", force: :cascade do |t|
     t.string "name", null: false
     t.string "url",  null: false
-  end
-
-  create_table "volunteer_forms", force: :cascade do |t|
-    t.date "start_date", null: false
-    t.date "end_date",   null: false
-    t.text "form"
-    t.text "info"
   end
 
 end

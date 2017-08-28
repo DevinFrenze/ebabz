@@ -17,3 +17,19 @@
 .home .fest-info {
   margin-top: 24px;
 }
+
+.home__cta-link,
+.home__application-info {
+  margin-top: 48px;
+  letter-spacing: 0.1em;
+}
+
+.home__cta-link {
+  @extend .unstyled-link;
+  text-transform: uppercase;
+  font-size: $font-size-lg;
+  letter-spacing: 0.1em;
+  text-align: center;
+  background: $gray;
+  padding: 12px 48px;
+}

@@ -5,8 +5,18 @@ class Fest < ApplicationRecord
   has_many :vendors, through: :fest_vendors
 
   belongs_to :location, dependent: :destroy, optional: true
-  belongs_to :application_form, dependent: :destroy, optional: true
-  belongs_to :volunteer_form, dependent: :destroy, optional: true
+
+  belongs_to :application_form,
+    class_name: 'Form',
+    dependent: :destroy,
+    optional: true,
+    foreign_key: 'application_form_id'
+
+  belongs_to :volunteer_form,
+    class_name: 'Form',
+    dependent: :destroy,
+    optional: true,
+    foreign_key: 'volunteer_form_id'
 
   def to_s
     undefined = []
@@ -64,7 +74,34 @@ class Fest < ApplicationRecord
     application_form.present?
   end
 
+  def is_application_period?
+    has_application_form? && application_form.is_open?
+  end
+
+  def is_before_application_period?
+    has_application_form? && application_form.is_in_future?
+  end
+
+  def is_after_application_period?
+    has_application_form? && application_form.is_in_past?
+  end
+
   def has_volunteer_form?
     application_form.present?
+  end
+
+  def is_volunteer_period?
+    has_volunteer_form? && volunteer_form.is_open?
+  end
+
+  def application_past_string
+    close = application_form.end_date_string
+    "Applications closed on #{close}"
+  end
+
+  def application_future_string
+    open = application_form.start_date_string
+    close = application_form.end_date_string
+    "Applications will be open from #{open} to #{close}"
   end
 end
