@@ -28,7 +28,7 @@ $row-spacer: 36px;
 .section__heading {
   text-transform: uppercase;
   font-size: $font-size-lg;
-  letter-spacing: 0.1em;
+  letter-spacing: $letter-spacing-lg;
   margin: 0;
   text-align: center;
   background: $gray;
@@ -41,9 +41,9 @@ $row-spacer: 36px;
 }
 
 .section__content {
-  letter-spacing: 0.05em;
   line-height: 1.667;
   font-size: $font-size-md;
+  letter-spacing: $letter-spacing-md;
   @include min-media-query($screen-md-min) {
     padding-top: 14px;
     width: calc(((100% - (2 * #{$column-spacer})) * 0.667) + #{$column-spacer});

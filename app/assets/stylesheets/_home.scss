@@ -33,6 +33,7 @@
 
 .home__nav-links .nav-link {
   font-size: $font-size-lg;
+  letter-spacing: $letter-spacing-lg;
   margin-left: 48px;
   color: inherit;
   text-decoration: none;
@@ -48,7 +49,6 @@
 .home__cta-link,
 .home__application-info {
   margin: 48px 0;
-  letter-spacing: 0.1em;
   @include min-media-query($screen-md-min) {
     margin-bottom: 0;
   }
@@ -58,7 +58,7 @@
   @extend .unstyled-link;
   text-transform: uppercase;
   font-size: $font-size-lg;
-  letter-spacing: 0.1em;
+  letter-spacing: $letter-spacing-lg;
   text-align: center;
   background: $gray;
   padding: 12px 48px;

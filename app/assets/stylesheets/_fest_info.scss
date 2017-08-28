@@ -1,9 +1,7 @@
 .fest-info {
   display: flex;
   flex-direction: column;
-  font-size: $font-size-md;
   align-items: center;
-  // justify-content: center;
   @include min-media-query($screen-md-min) {
     flex-direction: row;
   }
@@ -25,7 +23,6 @@
 
 .fest-info__date p,
 .fest-info__location p {
-  letter-spacing: 0.1em;
   margin: 0;
   margin-top: 12px;
   &:first-child {

@@ -2,10 +2,13 @@
 
 $roboto: 'Roboto', sans-serif;
 
-$font-size-xs: 12px;
 $font-size-sm: 14px;
 $font-size-md: 16px;
 $font-size-lg: 20px;
+
+$letter-spacing-sm: 0.05 * $font-size-sm;
+$letter-spacing-md: 0.075 * $font-size-md;
+$letter-spacing-lg: 0.1 * $font-size-lg;
 
 $black: #333333;
 $gray: #999999;

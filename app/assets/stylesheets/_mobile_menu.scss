@@ -11,7 +11,7 @@ $mobile-menu-color: $white;
   height: calc(100% - (2 * #{$mobile-menu-spacing}));
   z-index: 1;
 
-  font-size: 28px;
+  font-size: 28px; // TODO change or make into variable
   padding-top: $mobile-menu-spacing;
   padding-bottom: $mobile-menu-spacing;
 

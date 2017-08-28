@@ -21,6 +21,7 @@
   padding-top: $font-size-lg;
   padding-bottom: $font-size-lg;
   font-size: $font-size-lg;
+  letter-spacing: $letter-spacing-lg;
 
   transition: padding-top 0.5s;
   transition: padding-bottom 0.5s;
@@ -47,6 +48,7 @@
   right: 0;
   z-index: 1;
   font-size: $font-size-md;
+  letter-spacing: $letter-spacing-md;
   padding-top: 10px;
   padding-bottom: 10px;
 }
