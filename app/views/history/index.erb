@@ -6,24 +6,27 @@
   <% end %>
 
   <% if @articles.any? %>
-    <%= render "section", heading: "Press", reverse: true do %>
+    <%= render "section", heading: "Press" do %>
       <% @articles.each_with_index do |article, index| %>
         <% if index == 0 || article.year != @articles[index - 1].year %>
-          <p><%= article.year %></p>
+          <div class="history__article-year"><%= article.year %></div>
         <% end %>
         <%= render "article", article: article %>
       <% end %>
     <% end %>
   <% end %>
 
-  <% if @past_fests.any? %>
-    <h2>Past Fests</h2>
-  <% end %>
+  <% @past_fests.each_with_index do |fest, index| %>
+    <% reverse = index % 2 == 1 %>
+    <%= render "section", heading: "EBABZ #{fest.year}", reverse: reverse do %>
+      <%= render "fest_info", fest: fest %>
+    <% end %>
 
-  <% @past_fests.each do |fest| %>
-    <%= render "fest_info", fest: fest %>
-
-    <%= render "section", heading: "#{fest.year} Vendors" do %>
+    <%= render "section",
+      heading: "#{fest.year} Vendors",
+      class_name: "vendors-section",
+      reverse: reverse do
+    %>
       <% fest.vendors.each do |vendor| %>
         <%= render "vendor", vendor: vendor %>
       <% end %>

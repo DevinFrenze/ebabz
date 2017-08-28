@@ -42,7 +42,7 @@ class Fest < ApplicationRecord
   end
 
   def name_string
-    "EBABZ Fest #{year}"
+    "#{(year - 2009).ordinalize} Annual EBABZ"
   end
 
   def has_time?

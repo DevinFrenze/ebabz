@@ -1,6 +1,9 @@
 <div class="vendors container--min content--narrow">
-  <%= render "section", heading: "Vendors" do %>
-    <% @fest.vendors.each do |vendor| %>
+  <%= render "section",
+    heading: "#{@year} Vendors",
+    class_name: "vendors-section" do
+  %>
+    <% @vendors.each do |vendor| %>
       <%= render "vendor", vendor: vendor %>
     <% end %>
   <% end %>

@@ -1,4 +1,4 @@
-<div class="section <% if local_assigns.has_key?(:reverse) && reverse %>m--reverse<% end %>">
+<div class="section <% if local_assigns.has_key?(:reverse) && reverse %>m--reverse<% end %><% if local_assigns.has_key?(:class_name) %><%= class_name %><% end %>">
   <div class="section__heading-container">
     <h2 class="section__heading"><%= heading %></h2>
   </div>

@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   layout 'basic_page'
 
   def set_fest
-    @fest = Fest.last || Fest.new
+    @fest = Fest.order(:year).last
   end
 end

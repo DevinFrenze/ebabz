@@ -1,0 +1,7 @@
+.vendor {
+  width: calc(50% - 12px);
+}
+
+.vendor-link {
+  @extend .unstyled-link;
+}

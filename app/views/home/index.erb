@@ -1,7 +1,9 @@
 <%= render "mobile_menu" %>
 
 <div class="home container--min content--narrow">
-  <h1 class="home__event-title">East Bay Alternative Book and Zine Fest</h1>
+  <h1 class="home__event-title">
+    East Bay Alternative Book and Zine Fest <%= @fest.year %>
+  </h1>
   <div class="home__nav-links">
     <%= render "nav_links" %>
   </div>

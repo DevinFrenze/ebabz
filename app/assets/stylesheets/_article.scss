@@ -1,0 +1,13 @@
+.article {
+  display: block;
+  @extend .unstyled-link;
+  margin-bottom: 12px;
+  min-width: 50%;
+}
+
+.article__title {
+}
+
+.article__publication {
+  font-style: italic;
+}

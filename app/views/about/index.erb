@@ -1,5 +1,7 @@
 <div class="about container--min content--narrow">
-  <%= render "fest_info", fest: @fest %>
+  <%= render "section", heading: "EBABZ #{@fest.year}" do %>
+    <%= render "fest_info", fest: @fest %>
+  <% end %>
 
   <% if @faqs.any? %>
     <%= render "section", heading: "Frequenty Asked Questions" do %>

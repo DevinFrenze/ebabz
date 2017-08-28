@@ -5,6 +5,9 @@
 
   &.m--reverse {
     flex-direction: row-reverse;
+    .section__content {
+      text-align: right;
+    }
   }
 }
 
@@ -34,6 +37,7 @@
   font-size: $font-size-md;
   @include min-media-query($screen-md-min) {
     align-self: flex-end;
-    max-width: 60%;
+    max-width: 66.67%;
+    width: 66.67%;
   }
 }
