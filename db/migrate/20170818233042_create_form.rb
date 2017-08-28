@@ -3,8 +3,7 @@ class CreateForm < ActiveRecord::Migration[5.0]
     create_table :forms do |t|
       t.date    :start_date, null: false
       t.date    :end_date, null: false
-      t.text    :form, null: false
-      t.text    :info
+      t.string  :url, null: false
     end
   end
 end

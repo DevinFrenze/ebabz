@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20170820045119) do
   end
 
   create_table "articles", force: :cascade do |t|
-    t.string   "publication"
-    t.string   "title"
-    t.string   "url"
-    t.integer  "year"
+    t.string   "publication", null: false
+    t.string   "title",       null: false
+    t.string   "url",         null: false
+    t.integer  "year",        null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -61,10 +61,9 @@ ActiveRecord::Schema.define(version: 20170820045119) do
   end
 
   create_table "forms", force: :cascade do |t|
-    t.date "start_date", null: false
-    t.date "end_date",   null: false
-    t.text "form",       null: false
-    t.text "info"
+    t.date   "start_date", null: false
+    t.date   "end_date",   null: false
+    t.string "url",        null: false
   end
 
   create_table "general_infos", force: :cascade do |t|

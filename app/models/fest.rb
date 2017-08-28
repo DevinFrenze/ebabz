@@ -87,7 +87,7 @@ class Fest < ApplicationRecord
   end
 
   def has_volunteer_form?
-    application_form.present?
+    volunteer_form.present?
   end
 
   def is_volunteer_period?

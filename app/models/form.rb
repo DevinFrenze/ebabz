@@ -1,7 +1,7 @@
 class Form < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :form, presence: true
+  validates :url,  presence: true, url: true
 
   def start_date_string
     start_date.strftime("%B %e")

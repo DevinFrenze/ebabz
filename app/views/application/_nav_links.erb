@@ -5,7 +5,7 @@
 
 <% if @fest.is_application_period? %>
   <%= link_to "Apply",
-    { controller: "/application_form" },
+    @fest.application_form.url,
     class: "nav-link"
   %>
 <% end %>
@@ -22,7 +22,7 @@
 
 <% if @fest.is_volunteer_period? %>
   <%= link_to "Volunteer",
-    { controller: "/volunteer_form" },
+    @fest.volunteer_form.url,
     class: "nav-link"
   %>
 <% end %>

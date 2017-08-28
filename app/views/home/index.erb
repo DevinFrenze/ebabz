@@ -8,14 +8,14 @@
   <%= render "fest_info", fest: @fest %>
   <% if @fest.is_application_period? %>
     <%= link_to "Apply",
-      { controller: "/application_form" },
+      @fest.application_form.url,
       class: "home__cta-link"
     %>
   <% elsif @fest.is_before_application_period? %>
     <div class="home__application-info"><%= @fest.application_future_string %></div>
   <% elsif @fest.is_volunteer_period? %>
     <%= link_to "Volunteer",
-      { controller: "/volunteer_form" },
+      @fest.volunteer_form.url,
       class: "home__cta-link"
     %>
   <% elsif @fest.is_after_application_period? %>
