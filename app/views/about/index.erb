@@ -4,12 +4,9 @@
   <% end %>
 
   <% if @faqs.any? %>
-    <%= render "section", heading: "Frequenty Asked Questions" do %>
+    <%= render "section", heading: "FAQ" do %>
       <% @faqs.each do |faq| %>
-        <div>
-          <p><%= faq.question %></p>
-          <p><%= faq.answer %></p>
-        </div>
+        <%= render "faq", faq: faq %>
       <% end %>
     <% end %>
   <% end %>

@@ -1,5 +1,7 @@
 .vendors-section .section__content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  @include min-media-query($screen-md-min) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }

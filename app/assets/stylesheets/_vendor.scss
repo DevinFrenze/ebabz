@@ -1,5 +1,7 @@
 .vendor {
-  width: calc(50% - 12px);
+  @include min-media-query($screen-md-min) {
+    width: calc(50% - 12px);
+  }
 }
 
 .vendor-link {
