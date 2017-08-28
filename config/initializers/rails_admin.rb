@@ -24,15 +24,11 @@ RailsAdmin.config do |config|
 
   config.excluded_models << "Admin" << "FestVendor"
 
-  config.model 'Address' do
+  config.model 'Location' do
     visible false
   end
 
-  config.model 'ApplicationForm' do
-    visible false
-  end
-
-  config.model 'VolunteerForm' do
+  config.model 'Form' do
     visible false
   end
 end
