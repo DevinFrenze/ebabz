@@ -3,13 +3,15 @@
 <div id="header" class="header">
   <div class="header__picture container--min content--wide">
   </div>
-  <nav id="nav" class="header__navbar container--screen content--dynamic">
-    <%= link_to "Home",
-      root_path,
-      class: "header__home-link"
-    %>
-    <div class="header__navbar__nav-links">
-      <%= render "nav_links" %>
-    </div>
-  </nav>
+  <div class="container--screen content--dynamic">
+    <nav id="nav" class="header__navbar">
+      <%= link_to "Home",
+        root_path,
+        class: "header__home-link"
+      %>
+      <div class="header__navbar__nav-links">
+        <%= render "nav_links" %>
+      </div>
+    </nav>
+  </div>
 </div>

@@ -10,7 +10,9 @@
   appearance: none;
   border: none;
   background: none;
+  outline: none;
   padding: 0;
+
   &:hover {
     text-decoration: underline;
     cursor: pointer;

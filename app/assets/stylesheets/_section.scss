@@ -31,8 +31,9 @@ $row-spacer: 36px;
   letter-spacing: $letter-spacing-lg;
   margin: 0;
   text-align: center;
-  background: $gray;
+  color: $white;
   padding: 12px;
+  @include skew-bg;
 }
 
 .section__spacer {
