@@ -1,6 +1,6 @@
 class AboutController < ApplicationController
   def index
     @general_info = GeneralInfo.last || GeneralInfo.new
-    @faqs = FAQ.all
+    @faqs = Faq.all
   end
 end
