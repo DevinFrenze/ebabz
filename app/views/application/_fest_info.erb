@@ -1,4 +1,4 @@
-<div class="fest-info">
+<div class="fest-info<% if fest.location.present? %> m--has-location<% end %>">
   <div class="fest-info__date">
     <p><%= fest.name_string %></p>
     <p><%= fest.date_string %></p>
