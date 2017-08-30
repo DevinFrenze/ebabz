@@ -3,7 +3,7 @@
     root_path,
     class: "mobile-header__home-link"
   %>
-  <%= button_tag inline_svg("display.svg", class: 'icon--display'),
+  <%= button_tag inline_svg("menu.svg", class: 'icon-link__icon'),
     onclick: "document.getElementById('mobile-menu').classList.toggle('m--open')",
     type: "button",
     class: "mobile-menu__open-button"
@@ -12,7 +12,7 @@
 
 <div id="mobile-menu" class="mobile-menu container--screen content--dynamic">
   <div class="mobile-menu__icons">
-    <%= button_tag inline_svg("plus.svg", class: 'icon--close'),
+    <%= button_tag inline_svg("x.svg", class: 'icon-link__icon'),
       onclick: "document.getElementById('mobile-menu').classList.toggle('m--open')",
       type: "button",
       class: "mobile-menu__close-button"

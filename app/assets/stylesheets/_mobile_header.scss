@@ -12,7 +12,7 @@ $mobile-header-spacing: $content-sm-gutter;
   justify-content: space-between;
 
   background: $white;
-  font-size: 28px; // TODO change
+  font-size: $font-size-lg;
 
   padding-top: $mobile-header-spacing;
   padding-bottom: $mobile-header-spacing;
@@ -32,12 +32,4 @@ $mobile-header-spacing: $content-sm-gutter;
 
 button.mobile-menu__open-button {
   height: $mobile-header-spacing * 1.5;
-}
-
-.mobile-header .icon--display {
-  height: $mobile-header-spacing * 1.5;
-  width: $mobile-header-spacing * 1.5;
-  * {
-    fill: $black;
-  }
 }

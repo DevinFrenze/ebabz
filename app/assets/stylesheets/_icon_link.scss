@@ -3,8 +3,8 @@
 }
 
 .icon-link__icon {
-  height: 32px;
-  width: 32px;
+  height: $icon-size;
+  width: $icon-size;
 
   * {
     fill: $icon-color;

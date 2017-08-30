@@ -63,14 +63,8 @@ button.mobile-menu__close-button {
 }
 
 button.mobile-menu__close-button {
-  height: $mobile-menu-spacing * 1.5;
+  height: $icon-size;
   margin-bottom: 24px;
-}
-
-.mobile-menu .icon--close {
-  transform: rotate(45deg);
-  height: $mobile-menu-spacing * 1.5;
-  width: $mobile-menu-spacing * 1.5;
 }
 
 .mobile-menu .icon-link {
@@ -78,11 +72,6 @@ button.mobile-menu__close-button {
   height: 32px;
 }
 
-.mobile-menu {
-  .icon-link__icon,
-  .icon--close {
-    * {
-      fill: $mobile-menu-color;
-    }
-  }
+.mobile-menu .icon-link__icon * {
+  fill: $mobile-menu-color !important;
 }
