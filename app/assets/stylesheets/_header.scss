@@ -1,4 +1,5 @@
-.header {
+.header__picture,
+.header__navbar {
   @include max-media-query($screen-sm-max) {
     display: none;
   }
@@ -7,25 +8,7 @@
 .header__picture {
   background: blue;
   height: 300px;
-}
-
-.header__navbar {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: center;
-
-  background: $gray;
-  color: $white;
-
-  padding-top: $font-size-lg;
-  padding-bottom: $font-size-lg;
-  font-size: $font-size-lg;
-  letter-spacing: $letter-spacing-lg;
-
-  transition: padding-top 0.5s;
-  transition: padding-bottom 0.5s;
-  transition: font-size 0.5s;
+  width: 100%;
 }
 
 .header__navbar__nav-links .nav-link {
@@ -41,14 +24,48 @@
   }
 }
 
+.header__navbar {
+  @include skew-bg;
+  z-index: 1;
+  text-align: right;
+  margin: 0 auto;
+
+  width: 634px;
+  color: $white;
+  padding: $font-size-md;
+  font-size: $font-size-md;
+  letter-spacing: $letter-spacing-md;
+
+  transition: 0.25s ease-in-out;
+  &:before { transition: 0.25s ease-in-out; }
+  * { display: inline; }
+}
+
 .header__navbar.m--fixed {
+  @include unskew-bg;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
-  font-size: $font-size-md;
-  letter-spacing: $letter-spacing-md;
-  padding-top: 10px;
-  padding-bottom: 10px;
+}
+
+.header__navbar.m--right {
+  padding: $font-size-md $content-md-gutter;
+  width: calc(100% - (2 * #{$content-md-gutter}));
+  max-width: $content-wide-max-width;
+  $content-dynamic-break-point: $page-max-width + (2 * $content-md-gutter);
+  @include apply-padding($content-dynamic-break-point, $flex-padding-wide);
+
+  .header__home-link {
+    display: none;
+  }
+}
+
+.header__navbar.m--follower {
+  display: none;
+  opacity: 0;
+}
+
+.m--fixed + .header__navbar.m--follower {
+  display: block;
 }

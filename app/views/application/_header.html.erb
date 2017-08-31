@@ -1,17 +1,21 @@
 <%= render "mobile_menu" %>
 
-<div id="header" class="header">
-  <div class="header__picture container--min content--wide">
+<div class="header__picture container--min content--wide">
+</div>
+
+<div id="nav" class="header__navbar">
+  <%= link_to "Home",
+    root_path,
+    class: "header__home-link"
+  %>
+  <div class="header__navbar__nav-links">
+    <%= render "nav_links" %>
   </div>
-  <div class="container--screen content--dynamic">
-    <nav id="nav" class="header__navbar">
-      <%= link_to "Home",
-        root_path,
-        class: "header__home-link"
-      %>
-      <div class="header__navbar__nav-links">
-        <%= render "nav_links" %>
-      </div>
-    </nav>
-  </div>
+</div>
+
+<div id="nav-follower" class="header__navbar m--follower">
+  <%= link_to "Home",
+    root_path,
+    class: "header__home-link"
+  %>
 </div>
