@@ -1,8 +1,13 @@
 .article {
-  display: block;
-  @extend .unstyled-link;
+  position: relative;
+  display: inline-block;
+  @include unstyled-link;
   margin-bottom: 12px;
   min-width: 50%;
+  padding: 0px 16px;
+  &:before {
+    border-left: 2px solid $black;
+  }
 }
 
 .article__title {
@@ -10,4 +15,6 @@
 
 .article__publication {
   font-style: italic;
+  position: relative;
+  left: -4px;
 }

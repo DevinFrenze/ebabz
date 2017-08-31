@@ -3,6 +3,7 @@
 
   &:before {
     content: '';
+    transition: 0.25s ease-in-out;
 
     position: absolute;
     top: 0;
@@ -17,20 +18,9 @@
 }
 
 @mixin unskew-bg($color: $gray) {
-  position: relative;
-
   &:before {
-    content: '';
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
     background: $color;
     transform: skew(0);
-    z-index: -1;
   }
 }
 
@@ -38,4 +28,19 @@
   * {
     fill: $color;
   }
+}
+
+@mixin unstyled-link($hover-color: $primary-light-color, $default-color: $white) {
+  color: inherit;
+  text-decoration: none;
+  @include skew-bg($default-color);
+
+  &:hover {
+    cursor: pointer;
+    @include skew-bg($hover-color);
+  }
+}
+
+@mixin unstyled-link-dark($hover-color: $primary-dark-color, $default-color: $black) {
+  @include unstyled-link($hover-color, $default-color);
 }

@@ -1,9 +1,13 @@
 .vendor {
+  position: relative;
+  margin-bottom: 8px;
+  left: -4px;
   @include min-media-query($screen-md-min) {
-    width: calc(50% - 12px);
+    min-width: calc(50% - 12px);
   }
 }
 
 .vendor-link {
-  @extend .unstyled-link;
+  @include unstyled-link;
+  padding: 4px;
 }

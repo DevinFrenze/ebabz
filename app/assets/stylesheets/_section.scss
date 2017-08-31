@@ -33,7 +33,7 @@ $row-spacer: 36px;
   text-align: center;
   color: $white;
   padding: 12px;
-  @include skew-bg;
+  @include skew-bg($secondary-dark-color);
 }
 
 .section__spacer {

@@ -1,5 +1,6 @@
 $mobile-menu-spacing: $content-sm-gutter;
 $mobile-menu-color: $white;
+$mobile-menu-bg: $black;
 
 .mobile-menu {
   display: none;
@@ -17,7 +18,7 @@ $mobile-menu-color: $white;
 
   color: $mobile-menu-color;
   @include svg-color($mobile-menu-color);
-  background: $gray;
+  background: $mobile-menu-bg;
 
   @include max-media-query($screen-sm-max) {
     &.m--open {
@@ -37,7 +38,9 @@ $mobile-menu-color: $white;
 
 .mobile-menu__home-link,
 .mobile-menu .nav-link {
-  @extend .unstyled-link;
+  padding: 0 12px;
+  align-self: flex-start;
+  @include unstyled-link-dark;
 }
 
 .mobile-menu__icons {

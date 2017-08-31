@@ -1,5 +1,5 @@
 .donate {
-  display: inline;
+  display: inline-block;
 }
 
 .donate__submit {
@@ -14,7 +14,6 @@
   padding: 0;
 
   &:hover {
-    text-decoration: underline;
     cursor: pointer;
   }
 }

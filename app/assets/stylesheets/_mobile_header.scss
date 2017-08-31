@@ -27,7 +27,7 @@ $mobile-header-spacing: $content-sm-gutter;
 }
 
 .mobile-header__home-link {
-  @extend .unstyled-link;
+  @include unstyled-link;
 }
 
 button.mobile-menu__open-button {

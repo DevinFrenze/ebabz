@@ -25,7 +25,7 @@
   padding: 12px 24px;
   @include min-media-query($screen-md-min) {
     color: $white;
-    @include skew-bg;
+    @include skew-bg($black);
   }
 }
 
@@ -39,11 +39,8 @@
 .home__nav-links .nav-link {
   font-size: $font-size-lg;
   letter-spacing: $letter-spacing-lg;
-  margin-left: 48px;
-  color: inherit;
-  text-decoration: none;
-  &:first-child { margin-left: 0; }
-  &:hover { text-decoration: underline; }
+  padding: 12px 18px;
+  @include unstyled-link;
 }
 
 .home .fest-info {
@@ -64,13 +61,13 @@
 }
 
 .home__cta-link {
-  @extend .unstyled-link;
+  @include unstyled-link($primary-dark-color);
+  @include skew-bg($black);
   text-transform: uppercase;
   font-size: $font-size-lg;
   letter-spacing: $letter-spacing-lg;
   text-align: center;
   color: $white;
-  background: $gray;
   padding: 12px 48px;
 }
 
