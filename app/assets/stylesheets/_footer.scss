@@ -30,6 +30,30 @@
   letter-spacing: $letter-spacing-sm;
 }
 
+.footer__links {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .footer__links .icon-link {
-  margin-left: 32px;
+  margin-left: 24px;
+  @include svg-color($white);
+
+  .icon-link__icon {
+    height: 28px;
+    width: 28px;
+  }
+}
+.footer__links {
+  $footer-icon-size: 28px;
+  .icon-link__icon {
+    height: $footer-icon-size;
+    width: $footer-icon-size;
+  }
+  .m--facebook .icon-link__icon {
+    height: 0.9 * $footer-icon-size;
+    width: 0.9 * $footer-icon-size;
+  }
 }

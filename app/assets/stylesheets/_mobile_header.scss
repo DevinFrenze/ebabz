@@ -32,4 +32,5 @@ $mobile-header-spacing: $content-sm-gutter;
 
 button.mobile-menu__open-button {
   height: $mobile-header-spacing * 1.5;
+  @include svg-color;
 }

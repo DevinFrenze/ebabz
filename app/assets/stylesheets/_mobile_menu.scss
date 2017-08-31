@@ -16,6 +16,7 @@ $mobile-menu-color: $white;
   padding-bottom: $mobile-menu-spacing;
 
   color: $mobile-menu-color;
+  @include svg-color($mobile-menu-color);
   background: $gray;
 
   @include max-media-query($screen-sm-max) {
@@ -68,10 +69,11 @@ button.mobile-menu__close-button {
 }
 
 .mobile-menu .icon-link {
-  margin-top: $mobile-menu-spacing / 2;
+  margin-top: $mobile-menu-spacing;
   height: 32px;
 }
 
-.mobile-menu .icon-link__icon * {
-  fill: $mobile-menu-color !important;
+.mobile-menu .m--email .icon-link__icon {
+  height: 0.9 * $icon-size;
+  width: 0.9 * $icon-size;
 }

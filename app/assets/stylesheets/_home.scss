@@ -69,11 +69,14 @@
   font-size: $font-size-lg;
   letter-spacing: $letter-spacing-lg;
   text-align: center;
+  color: $white;
   background: $gray;
   padding: 12px 48px;
 }
 
 .home__icon-links {
+  display: flex;
+  align-items: center;
   margin-top: 36px;
   @include max-media-query($screen-sm-max) {
     display: none;
@@ -81,6 +84,7 @@
 }
 
 .home__icon-links .icon-link {
-  margin-left: 18px;
+  margin-left: 24px;
   &:first-child { margin-left: 0; }
+  @include svg-color;
 }

@@ -5,8 +5,9 @@
 .icon-link__icon {
   height: $icon-size;
   width: $icon-size;
+}
 
-  * {
-    fill: $icon-color;
-  }
+.m--facebook .icon-link__icon {
+  height: 0.9 * $icon-size;
+  width: 0.9 * $icon-size;
 }
