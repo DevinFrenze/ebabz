@@ -1,4 +1,5 @@
 .header__title,
+.header__navbar-container,
 .header__navbar {
   @include max-media-query($screen-sm-max) {
     display: none;
