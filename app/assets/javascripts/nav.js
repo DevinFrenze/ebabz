@@ -1,5 +1,8 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
+  $(window).unbind('scroll');
   nav = $("#nav");
+  if (!nav.length) return;
+
   threshold = nav.offset().top;
   fixedClass = "m--fixed";
   rightClass = "m--right";
