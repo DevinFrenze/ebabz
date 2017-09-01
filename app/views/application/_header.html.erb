@@ -4,19 +4,14 @@
   <%= render "title" %>
 </div>
 
-<div id="nav" class="header__navbar">
-  <%= nav_link_to "Home",
-    root_path,
-    class: "header__home-link"
-  %>
-  <div class="header__navbar__nav-links">
-    <%= render "nav_links" %>
+<div class="header__navbar-container">
+  <div id="nav" class="header__navbar">
+    <%= nav_link_to "Home",
+      root_path,
+      class: "header__home-link"
+    %>
+    <div class="header__navbar__nav-links">
+      <%= render "nav_links" %>
+    </div>
   </div>
-</div>
-
-<div id="nav-follower" class="header__navbar m--follower">
-  <%= link_to "Home",
-    root_path,
-    class: "header__home-link"
-  %>
 </div>
