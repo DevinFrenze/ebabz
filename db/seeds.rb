@@ -11,4 +11,4 @@ Seeders::ArticleSeeder.new.seed!
 Seeders::FestSeeder.new.seed!
 Seeders::VendorSeeder.new.seed!
 Seeders::GeneralInfoSeeder.new.seed!
-Seeders::FAQSeeder.new.seed!
+Seeders::FaqSeeder.new.seed!

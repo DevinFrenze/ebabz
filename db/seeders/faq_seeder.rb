@@ -1,8 +1,8 @@
 module Seeders
-  class FAQSeeder
+  class FaqSeeder
     def seed!
-      FAQ.transaction do
-        FAQ.create!(
+      Faq.transaction do
+        Faq.create!(
           question: "What does EBABZ stand for?",
           answer: "East Bay Alternative Book and Zine Fest"
         )
