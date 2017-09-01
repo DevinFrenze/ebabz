@@ -1,6 +1,7 @@
 // Fonts
 
 $roboto: 'Roboto', sans-serif;
+$display: 'Permanent Marker', cursive;
 
 $font-size-sm: 14px;
 $font-size-md: 16px;
@@ -13,14 +14,15 @@ $letter-spacing-lg: 0.1 * $font-size-lg;
 $black: #333333;
 $gray: #999999;
 $white: #ffffff;
+$transparent: rgba(0,0,0,0);
 
-$primary-dark-color: blue;
-$primary-light-color: yellow;
-$secondary-dark-color: purple;
-$secondary-light-color: lightcyan;
+$blue: #ddccff;
+$green: #ccffcc;
 
 $icon-color: $white;
 $icon-size: 32px;
-$mobile-header-height: 85px;
+$mobile-header-height: 80px;
 
 $angle: 15deg;
+$border-size: 6px;
+$transition: 0.25s ease-in-out;

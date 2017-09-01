@@ -24,12 +24,33 @@
   margin: 0;
   padding: 12px 24px;
   @include min-media-query($screen-md-min) {
+    font-family: $display;
+    font-size: 30px;
     color: $white;
     @include skew-bg($black);
+  }
+  &:after {
+    content: '';
+    background: $blue;
+    transform: skewY(2 * $angle);
+    z-index: -2;
+
+    position: absolute;
+    top: 35%;
+    right: 0;
+    bottom: 35%;
+    left: 0;
+    @include min-media-query($screen-md-min) {
+      top: 0;
+      right: 10%;
+      bottom: 0;
+      left: 10%;
+    }
   }
 }
 
 .home__nav-links {
+  text-transform: uppercase;
   margin-top: 24px;
   @include max-media-query($screen-sm-max) {
     display: none;
@@ -37,7 +58,7 @@
 }
 
 .home__nav-links .nav-link {
-  font-size: $font-size-lg;
+  font-size: $font-size-md;
   letter-spacing: $letter-spacing-lg;
   padding: 12px 18px;
   @include unstyled-link;
@@ -61,14 +82,18 @@
 }
 
 .home__cta-link {
-  @include unstyled-link($primary-dark-color);
+  @include unstyled-link;
   @include skew-bg($black);
   text-transform: uppercase;
-  font-size: $font-size-lg;
+  font-weight: bold;
+  font-size: $font-size-md;
   letter-spacing: $letter-spacing-lg;
   text-align: center;
   color: $white;
   padding: 12px 48px;
+  &:hover {
+    color: $black;
+  }
 }
 
 .home__icon-links {

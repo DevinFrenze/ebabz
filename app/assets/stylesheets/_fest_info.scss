@@ -9,12 +9,12 @@
 
 .fest-info__divider {
   width: 128px;
-  height: 2px;
+  height: $border-size;
   background: $black;
   margin: 48px 0px;
   transform: rotate(-15deg);
   @include min-media-query($screen-md-min) {
-    width: 2px;
+    width: $border-size;
     height: 64px;
     margin: 0 48px;
     transform: rotate(15deg);

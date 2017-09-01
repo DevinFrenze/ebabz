@@ -11,11 +11,12 @@ $mobile-header-spacing: $content-sm-gutter;
   align-items: center;
   justify-content: space-between;
 
-  background: $white;
+  background: $black;
+  color: $white;
   font-size: $font-size-lg;
 
-  padding-top: $mobile-header-spacing;
-  padding-bottom: $mobile-header-spacing;
+  padding-top: 0.5 * $mobile-header-spacing;
+  padding-bottom: 0.5 * $mobile-header-spacing;
 
   @include min-media-query($screen-md-min) {
     display: none;
@@ -23,14 +24,19 @@ $mobile-header-spacing: $content-sm-gutter;
 }
 
 .mobile-header__home-link {
-  margin-top: 4px;
+  font-family: $display;
+  font-size: 32px;
+  margin-top: -4px;
 }
 
 .mobile-header__home-link {
+  position: relative;
+  padding: 0 12px;
+  left: -12px;
   @include unstyled-link;
 }
 
 button.mobile-menu__open-button {
   height: $mobile-header-spacing * 1.5;
-  @include svg-color;
+  @include svg-color($white);
 }

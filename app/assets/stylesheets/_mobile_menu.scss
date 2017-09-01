@@ -1,6 +1,6 @@
 $mobile-menu-spacing: $content-sm-gutter;
-$mobile-menu-color: $white;
-$mobile-menu-bg: $black;
+$mobile-menu-color: $black;
+$mobile-menu-bg: $blue;
 
 .mobile-menu {
   display: none;
@@ -40,7 +40,10 @@ $mobile-menu-bg: $black;
 .mobile-menu .nav-link {
   padding: 0 12px;
   align-self: flex-start;
-  @include unstyled-link-dark;
+  @include unstyled-link;
+  &.selected {
+    @include skew-bg($white);
+  }
 }
 
 .mobile-menu__icons {

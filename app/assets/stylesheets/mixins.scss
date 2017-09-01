@@ -1,9 +1,9 @@
-@mixin skew-bg($color: $gray) {
+@mixin skew-bg($color: $black) {
   position: relative;
 
   &:before {
     content: '';
-    transition: 0.25s ease-in-out;
+    transition: $transition;
 
     position: absolute;
     top: 0;
@@ -17,7 +17,7 @@
   }
 }
 
-@mixin unskew-bg($color: $gray) {
+@mixin unskew-bg($color: $black) {
   &:before {
     background: $color;
     transform: skew(0);
@@ -30,10 +30,10 @@
   }
 }
 
-@mixin unstyled-link($hover-color: $primary-light-color, $default-color: $white) {
+@mixin unstyled-link($hover-color: $green) {
   color: inherit;
   text-decoration: none;
-  @include skew-bg($default-color);
+  @include skew-bg($transparent);
 
   &:hover {
     cursor: pointer;
@@ -41,6 +41,16 @@
   }
 }
 
-@mixin unstyled-link-dark($hover-color: $primary-dark-color, $default-color: $black) {
-  @include unstyled-link($hover-color, $default-color);
+@mixin right-highlight($color: $blue) {
+  position: relative;
+
+  &:before {
+    content: '';
+    @include min-media-query($screen-md-min) {
+      border-right: (2 * $border-size) solid $color;
+    }
+    @include max-media-query($screen-sm-max) {
+      border-bottom: $border-size solid $color;
+    }
+  }
 }

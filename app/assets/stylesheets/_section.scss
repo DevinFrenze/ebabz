@@ -4,7 +4,11 @@ $row-spacer: 36px;
 .section {
   display: flex;
   flex-direction: column;
+  margin-top: $row-spacer;
   margin-bottom: 2 * $row-spacer;
+  &:last-child {
+    margin-bottom: $row-spacer;
+  }
 
   &.m--reverse {
     flex-direction: row-reverse;
@@ -15,12 +19,16 @@ $row-spacer: 36px;
 
   @include min-media-query($screen-md-min) {
     flex-direction: row;
-    margin-bottom: 2 * $column-spacer;
+    &:last-child {
+      margin-bottom: 2 * $row-spacer;
+    }
   }
 }
 
 .section__heading-container {
+  align-self: center;
   @include min-media-query($screen-md-min) {
+    align-self: flex-start;
     width: calc(((100% - (2 * #{$column-spacer})) * 0.333));
   }
 }
@@ -32,8 +40,9 @@ $row-spacer: 36px;
   margin: 0;
   text-align: center;
   color: $white;
-  padding: 12px;
-  @include skew-bg($secondary-dark-color);
+  padding: 12px 24px;
+  @include skew-bg($black);
+  @include right-highlight;
 }
 
 .section__spacer {

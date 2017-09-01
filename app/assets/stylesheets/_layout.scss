@@ -18,10 +18,4 @@ body {
 .main {
   position: relative;
   flex-grow: 1;
-  @include min-media-query($screen-md-min) {
-    padding-top: 48px;
-    & > *:last-child {
-      padding-bottom: 22px;
-    }
-  }
 }
