@@ -12,12 +12,12 @@
   height: $border-size;
   background: $black;
   margin: 48px 0px;
-  transform: rotate(-15deg);
+  transform: skewY(-15deg);
   @include min-media-query($screen-md-min) {
     width: $border-size;
     height: 64px;
     margin: 0 48px;
-    transform: rotate(15deg);
+    transform: skewX(-15deg);
   }
 }
 
